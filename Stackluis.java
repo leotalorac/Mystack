@@ -8,9 +8,13 @@ public class Stackluis{
         head = new Node(o);
     }
     public void push(Object o){
-        Node n = new Node(o);
-        n.next = head;
-        head = n;
+        if(this.isemply()){
+            head = new Node(o);
+        }else{
+            Node n = new Node(o);
+            n.next = head;
+            head = n;
+        }
     }
     public Object top(){
         return head.ob;
@@ -18,6 +22,8 @@ public class Stackluis{
     public void pop(){
         if(head.next != null){
             head = head.next;
+        }else{
+            head = null;
         }
     }
     public boolean isemply(){
@@ -27,6 +33,11 @@ public class Stackluis{
             return false;
         }
         
+    }
+    public void printhead(){
+        if(!(this.isemply())){
+            System.out.println("head " + head.ob);
+        }
     }
 
 
