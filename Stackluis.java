@@ -13,7 +13,7 @@ public class Stackluis{
         }else{
             Node n = new Node(o);
             n.next = head;
-            head = n;
+            head = n;   
         }
     }
     public Object top(){
@@ -26,13 +26,19 @@ public class Stackluis{
             head = null;
         }
     }
-    public boolean isemply(){
+    public boolean isempty(){
         if(head == null){
             return true;
         }else{
             return false;
         }
-        
+    }
+    public boolean isnotempty(){
+        if(head != null){
+            return true;
+        }else{
+            return false;
+        }
     }
     public void printhead(){
         if(!(this.isemply())){
